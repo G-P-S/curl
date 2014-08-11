@@ -25,6 +25,8 @@
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
+				Description="copy windows-specific curlbuild.h file"
+				CommandLine="copy include\curl\curlbuild_win.h include\curl\curlbuild.h"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
@@ -88,6 +90,8 @@
 			>
 			<Tool
 				Name="VCPreBuildEventTool"
+				Description="copy windows-specific curlbuild.h file"
+				CommandLine="copy include\curl\curlbuild_win.h include\curl\curlbuild.h"
 			/>
 			<Tool
 				Name="VCCustomBuildTool"
