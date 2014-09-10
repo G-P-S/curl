@@ -545,12 +545,25 @@ CURLcode Curl_init_userdefined(struct UserDefined *set)
     return res;
 #endif
 
+
   /* This is our preferred CA cert bundle/path since install time */
+// DHE need a way to get to the CURL_CA_BUNDLE, so for now we are getting it
+// from an env var, until we do it through the registry
+
+  char* cwd;
+  cwd = curl_getenv("CURL_CA_BUNDLE");
+  if (cwd) {
+      printf("DHE: bundle is: %s\n", cwd);
+      res = setstropt(&set->str[STRING_SSL_CAFILE], cwd);
+  }
+  else {
+      printf("DHE: Environment variable CURL_CA_BUNDLE not set!\n", cwd);
 #if defined(CURL_CA_BUNDLE)
-  res = setstropt(&set->str[STRING_SSL_CAFILE], (char *) CURL_CA_BUNDLE);
+      res = setstropt(&set->str[STRING_SSL_CAFILE], (char *)CURL_CA_BUNDLE);
 #elif defined(CURL_CA_PATH)
-  res = setstropt(&set->str[STRING_SSL_CAPATH], (char *) CURL_CA_PATH);
+      res = setstropt(&set->str[STRING_SSL_CAPATH], (char *) CURL_CA_PATH);
 #endif
+  }
 
   set->wildcardmatch  = FALSE;
   set->chunk_bgn      = ZERO_NULL;
