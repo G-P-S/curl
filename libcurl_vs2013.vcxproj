@@ -102,7 +102,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>lib;include;..\openssl\inc_x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>lib;include;..\openssl-exports\win64-vs2013-$(Configuration)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;USE_SSLEAY;USE_OPENSSL;CURL_DISABLE_LDAP;BUILDING_LIBCURL;CURL_DISABLE_TELNET;CURL_DISABLE_DICT;CURL_DISABLE_TFTP;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -139,7 +139,7 @@
     <ClCompile>
       <Optimization>MaxSpeed</Optimization>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <AdditionalIncludeDirectories>lib;include;..\openssl\inc_x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>lib;include;..\openssl-exports\win64-vs2013-$(Configuration)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;USE_SSLEAY;USE_OPENSSL;CURL_DISABLE_LDAP;BUILDING_LIBCURL;CURL_DISABLE_TELNET;CURL_DISABLE_DICT;CURL_DISABLE_TFTP;CURL_STATICLIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <FunctionLevelLinking>true</FunctionLevelLinking>
