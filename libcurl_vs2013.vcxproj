@@ -110,6 +110,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <PreBuildEvent>
       <Command>copy include\curl\curlbuild_win.h include\curl\curlbuild.h</Command>
@@ -147,6 +148,7 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ProgramDataBaseFileName>$(OutDir)$(TargetName).pdb</ProgramDataBaseFileName>
     </ClCompile>
     <PreBuildEvent>
       <Command>copy include\curl\curlbuild_win.h include\curl\curlbuild.h</Command>
